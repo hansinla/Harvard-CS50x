@@ -1,0 +1,35 @@
+0.  Pneumonoultramicroscopicsilicovolcanoconiosis is, according to Oxford Dictionaries,
+    “a long word said to mean a lung disease caused by inhaling very fine ash and sand dust.”
+1.  getrusage()  returns  resource usage measures for who, which can be one
+       of the following:
+
+       RUSAGE_SELF
+              Return resource usage statistics for the calling process,  which
+              is the sum of resources used by all threads in the process.
+
+       RUSAGE_CHILDREN
+              Return resource usage statistics for all children of the calling
+              process that have terminated and been waited for.  These statis-
+              tics  will include the resources used by grandchildren, and fur-
+              ther removed descendants, if all of the intervening  descendants
+              waited on their terminated children.
+2.  16
+3.  To pass the whole structure with one argument.
+4.  If two arguments were passed, the second argument was the textfile and the string text is set to that,
+    otherwise the first argument was the name of the textfile and the string text is set to that.
+    The textfile is opened as a read-only stream fp. We read a character from the stream
+    until we hit an non-alpha character and assume that we have a complete word. Then we spell check the word
+    before we move on to the next word. 
+5.  It's more flexible because the word doesn't have to adhere to the format specifier.
+6.  The const keyword, when used correctly, is usually a hint to the compiler that some variable won't get changed
+    inside some scope, allowing the compiler to relax restrictions on certain types of optimizations and code scheduling
+    which could produce hazards or aliasing errors if that variable actually was somehow to be modified. 
+7.  I used a TRIE with an array of 27 children pointers and an 'end-of-word' boolean in a structure.
+8.  It was in the neighborhood of 0.2 seconds for load and about the same for unload.
+    (Although the very first try is always a bit longer, I assume the processor caches instructions.)
+    I then started optimizing loops and boolean checks, which brought down the execution time tremendously.
+    In the end, i'm still astonished that all this can happen in roughly 1/10 of a second.
+9.  Getting all the logic absolutely correct and optimize the code.
+10. No, but I think in a better IDE environment (for example XCode),
+    I would've been able to better track vars and pointers and optimize better.
+    I see a leak of 112 bytes, but can't find it in my code.

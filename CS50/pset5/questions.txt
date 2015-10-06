@@ -1,0 +1,37 @@
+0.  BMP     32-bits per pixel (32bpp) format supports 4,294,967,296 distinct colors
+    GIF      8-bits per pixel (from a 24-bit RGB color space)   256 distinct colors
+    JPEG    24-bits per pixel                            16,777,216 distinct colors
+    PNG     24-bits per pixel (or 32 bits RGBA)          16,777,216 distinct colors
+1.  GIF supports animation, although there's an addendum to PNG, called APNG, that allows animation, but it is not widely supported
+2.  In a lossy compression, we lose information and the process is not reversable.
+    Lossless compression retains all the data and is reversable.
+3.  GIF is lossy only, all other formats support both lossy and lossles compression.
+4.  The system modifies the file's first character in the file's directory to signify that the file has been deleted
+    and secondly the system moves all of the file's FAT clusters to the hard drive's list of free clusters.
+5.  Overwrite every bit with a zero.
+6.  stdint.h is a header file in the C standard library that declares integer data of fixed widths.
+7.  uint8_t, uint32_t, int32_t, and uint16_t define unsigned integers of a fixed number of bits,
+    which is significant for cross platform uses.
+8.  BYTE  -> uint8_t  so 1 byte
+    DWORD -> uint32_t so 4 bytes
+    LONG  -> int32_t  so 4 bytes
+    WORD  -> uint16_t so 2 bytes
+9.  BM
+10. bfSize -> The size, in bytes, of the bitmap file (in the BITMAPFILEHEADER)
+    biSize -> The number of bytes required by the BITMAPINFOHEADER structure
+11. If biHeight is negative, the bitmap is a top-down DIB and its origin is the upper-left corner.
+12. The biBitCount member of the BITMAPINFOHEADER structure determines the number of bits that define each pixel
+    and the maximum number of colors in the bitmap.
+13. If fope fails to open a file, it returns a NULL pointer. Possible causes icude:
+    The file exists and the permissions specified by mode are denied, or the file does not exist and write permission is denied
+    The maximum allowable number of files is currently open in the system.
+    The file does not exist, and the file was to be created, etc.
+14. The third argument of fread is 1 since we read one RGBTRIPPLE at a time.
+15. Since bi.biWidth = 1 byte, the scanline is "padded" with 3 bytes to extend the scanline’s length to a multiple of 4.
+16. The fseek function is used to change the file position of the stream.
+17. Function: int fseek (FILE *stream, long int offset, int whence
+    The value of whence must be one of the constants SEEK_SET, SEEK_CUR, or SEEK_END, to indicate whether the offset is relative
+    to the beginning of the file, the current file position, or the end of the file, respectively.
+
+
+18. Milo Banana dun it.
